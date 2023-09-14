@@ -14,13 +14,20 @@ namespace Engine
         public int RewardExperiencePoints { get; set; }
         public int RewardGold { get; set; }
 
-        public Monster(int currentHitPoints, int maximumHitPoints, int id, String name, int maximumDamage, int rewardExperiencePoints, int rewardGold) : base(currentHitPoints, maximumHitPoints)
+        //* Created collection of objects  (Lesson 10.1) *//
+        public List<LootItem>LootTable { get; set; }
+
+        public Monster(int id, string name, int maximumDamage, int rewardExperiencePoints, int rewardGold, int currentHitPoints, int maximumHitPoints)
+            : base(currentHitPoints, maximumHitPoints)
         {
             ID = id;
             Name = name;
             MaximumDamage = maximumDamage;
             RewardExperiencePoints = rewardExperiencePoints;
             RewardGold = rewardGold;
+
+            //* Created collection of objects and set it to an empty list; if it is not declared here, it will be considred a null set which cannot add anything into it(Lesson 10.1) *//
+            LootTable = new List<LootItem>();
         }
     }
 }
